@@ -12,7 +12,7 @@ DOCS	=	report slides
 
 .PHONY: clean view slides report
 
-default: slides.pdf
+default: report.pdf
 
 all: $(DOCS:%=%.pdf)
 
@@ -33,6 +33,14 @@ report: report.pdf
 
 report.pdf: report.bbl
 
+report.aux: report/000-abstract.tex
+report.aux: report/100-introduction.tex
+report.aux: report/200-pathfinding.tex
+report.aux: report/300-implementation.tex
+report.aux: report/400-results.tex
+report.aux: report/500-conclusion.tex
+
+report.bbl: bib/inproceedings.bib
 report.bbl: bib/misc.bib
 
 slides: slides.pdf

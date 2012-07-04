@@ -1,0 +1,15 @@
+\section{Pathfinding}
+
+The resolution of the pathfinding problem involves two distinct steps. First, a graph must be built, representing the possible paths an agent can take. This allows to immediatly take in consideration static obstacles in a global fashion, at least for all the agents that follow a specific graph. Second, a search algorithm must be used to search the best route along the created graph.
+
+In \cite{johansson09} many approaches to the graph int the pathfinging problem are described:
+\begin{description}
+	\item [Grid-based] The space is regularly divided in tiles. Each tile is evaluated to see if it has an obstacle, before moving to that tile. Easy to implement but creates unrealistic paths.
+	\item [Roadmap] A graph representing the possible movements an agent may perform is created. It does not find the optimal routes and may not create a realistic path. Also, usually the roadmaps are manually defined.
+	\item [Visibility Graphs] The corners of the objects are the nodes of the graph. Two nodes are linked if no obstacle exists between them. Causes wall-hugging, which creates paths far from natural.
+	\item [Corridor Map] A more modern approach to roadmaps. A graph is built, representing the possible corridors. The path is estimated along the graph. Each point of the path is linked to the neares obstacles to provide some safe colision distance. Triangulation provides the best route along the estimated path, creating realistic movements. 
+\end{description}
+
+As for the search algorithm, the most common approach is the A$\star$ algorithm. Similar to the more commonly known \textit{Dijkstra} algorithm, it searches for the best (shortest) path from an initial point to a goal. The two algorithms differ in the existence of an heuristic. The A$\star$ algorithm chooses the next step by considering the cost of reaching the next point and the estimate of the total cost from that point to the goal (given by the heuristic function). This function usually is a distance function (Manhattan, Euclidean).
+
+The A$\star$ algorithm is very irregular and divergent, which does not favor its implementation in the GPU.

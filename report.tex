@@ -7,10 +7,13 @@
 \usepackage{todonotes}
 \newcommand{\todoin}[1]{\todo[inline]{#1}}
 
+\usepackage{indentfirst}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{url}
 \usepackage{breakurl}
+
+\usepackage{natbib}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -38,7 +41,7 @@
 
 % \keywords{Face animation, image-based modelling, iris animation, photorealism, physiologically-based modelling}
 
-% \acmformat{Costa, P. 2009. A Review on GPU Accelerated Pathfinding.}
+% \acmformat{Avi Bleiweiss. 2008. GPU accelerated pathfinding. In Proceedings of the 23rd ACM SIGGRAPH/EUROGRAPHICS symposium on Graphics hardware (GH '08). Eurographics Association, Aire-la-Ville, Switzerland, Switzerland, 65-74.}
 
 \maketitle
 
@@ -52,6 +55,10 @@ Author address: \texttt{pg19830@alunos.uminho.pt}
 \input{report/000-abstract}
 
 \input{report/100-introduction}
+\input{report/200-pathfinding}
+\input{report/300-implementation}
+\input{report/400-results}
+\input{report/500-conclusion}
 
 
 % \begin{table*}[t]
@@ -684,9 +691,7 @@ Author address: \texttt{pg19830@alunos.uminho.pt}
 % Christian Pagot, Claudio Menezes, Giovane Kuhn, Jo\~{a}o Paulo Gois, Leonardo Schmitz, Rodrigo Mendes, and Tiago Etiene. 
 % \end{acks}
 
-\nocite{johansson09}
-
 \bibliographystyle{acmtog}
-\bibliography{bib/misc}
+\bibliography{bib/article,bib/inproceedings,bib/misc}
 
 \end{document}
