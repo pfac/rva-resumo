@@ -1,0 +1,14 @@
+# PDF documents
+*.pdf
+
+# BibTeX generated files
+*.bbl
+*.blg
+
+# LaTeX generated files
+*.log
+*.out
+*.aux
+*.nav
+*.snm
+*.toc
