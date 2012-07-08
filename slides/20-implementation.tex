@@ -1,0 +1,32 @@
+\section{Implementation}
+% \frame{\frametitle{Index}\tableofcontents[currentsection]}
+
+\begin{frame}
+	\frametitle{Implementation}
+	A$\star$
+	\begin{itemize}
+		\item Similar to \textit{Dijkstra}:
+		\begin{itemize}
+			\item For each node, follow the best edge;
+		\end{itemize}
+		\item Adds an heuristic to the cost function;
+		\item Highly irregular and divergent;
+		\item \href{http://www.youtube.com/watch?v=qo7B44zlYdQ}{Demo}
+	\end{itemize}
+	\vfill
+	\pause
+	Implementation:
+	\begin{itemize}
+		\item Roadmap in Texture Memory:
+		\begin{itemize}
+			\item Read-only;
+			\item Cached;
+		\end{itemize}
+		\item Priority queue;
+		\begin{itemize}
+			\item Inline heap;
+		\end{itemize}
+		\item Multi-launch tasks;
+		\item Optimized by Inam et al.
+	\end{itemize}
+\end{frame}

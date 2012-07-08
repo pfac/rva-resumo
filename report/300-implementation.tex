@@ -1,10 +1,10 @@
 \section{Implementation}
 
-\citeauthor{bleiweiss08} describes the implementation of a library for motion planning using CUDA in the GPU.
+\cite{bleiweiss08} describes the implementation of a library for motion planning using CUDA in the GPU.
 
-The graph is represented as a roadmap graph implemented using an adjacency list. Dynamic roadmaps, which change over time were not focused. Being static, the roadmap was stored in the GPU using textures memory since it is read-only and cached.
+The graph is represented as a roadmap implemented using an adjacency list. Dynamic roadmaps, which change over time were not focused. Being static, the roadmap was stored in the GPU using textures memory since it is read-only and cached.
 
-The search algorithm A$\star$ algorithm was implemented as an independent kernel. The inputs of the kernels were defined in a \textit{Structs-Of-Arrays} approach, which favors coalesced accesses:
+The search algorithm A$\star$ was implemented as an independent kernel. The inputs of this kernel were defined in a \textit{Structs-Of-Arrays} approach, which favors coalesced accesses:
 \begin{itemize}
 	\item One path per agent (defined as start and goal points);
 	\item Costs from the start position (initialized at zero);
@@ -12,9 +12,9 @@ The search algorithm A$\star$ algorithm was implemented as an independent kernel
 	\item A pair of arrays holding the pending and shortest edge collections.
 \end{itemize}
 
-One of the improvements for an A$\star$ algorithm is the implementation of a node priority queue, which allows the best nodes to be placed on top, despite the order of insertion.
-The priority queue was implemented as an inline heap, with two optimized GPU kernels for insertion and extration (and removal).
+One of the improvements added to the A$\star$ algorithm was the implementation of a node priority queue, which allows the best nodes to be placed on top, despite the order of insertion.
+The priority queue was implemented as an inline heap, with two optimized GPU kernels for insertion and extraction (and removal).
 
-The GPU hardware used in \cite{bleiweiss08} had very small amount of memory (512 KB). The author solved this issue by splitting the computation into a sequence of multi launch tasks. Between each launch, the partial result is written in the larger host memory.
+The GPU hardware used in \cite{bleiweiss08} had a very small amount of memory (512 MB). The author worked around this limitation by splitting the computation into a sequence of multi launch tasks. Between each launch, the partial result is written in the larger host memory.
 
 Each thread in the GPU simulated a single agent.

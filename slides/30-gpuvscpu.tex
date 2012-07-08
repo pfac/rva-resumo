@@ -3,4 +3,17 @@
 
 \begin{frame}
 	\frametitle{GPU vs CPU}
+	\begin{itemize}
+		\item GPU \textbf{vs} Single Core \textbf{vs} Dual Processor;
+		\item CUDA \textbf{vs} Scalar C++ (O2) \textbf{vs} C++ with SSE;
+		\item A$\star$ (with \textit{Euclidean} distance) \textbf{vs} \textit{Dijkstra};
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=.5\textwidth]{images/speedups.png}
+	\end{figure}
+	\begin{description}
+		\item [55$\times$] CUDA on GPU \textbf{vs} Scalar C++ (O2) --- A$\star$;
+		\item [24$\times$] CUDA on GPU \textbf{vs} C++ with SSE --- A$\star$;
+	\end{description}
 \end{frame}

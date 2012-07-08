@@ -1,11 +1,11 @@
 \section{Introduction}
 
-The problem of pathfinding is a very common appearance in the development of animations and games. It consists in finding a route for agents (characters or moving objects) to move along while taking into consideration the existence of obstacles.
+The problem of pathfinding is a very common appearance in the field of robotics and multimedia (animations and games). It consists in finding a route for agents (characters or moving objects) to move along while taking into consideration the existence of obstacles.
 
 Obstacles may either be static or dynamic. Static obstacles are usually scenery elements and non-player characters (NPCs), such as rocks, walls, vendors and hostages. Dynamic obstacles are those that move in the scene (the player, a car, the player's party, enemies).
 
-Agents are considered to be any moving element in the scene.
-Modern games and animations usually have dozens of agents in a scene, and thousands of points which may belong to their route, which represents heavy computational overload.
+Agents are considered to be any moving element in the scene with some artificial inteligence.
+Modern games and animations usually have dozens of agents in a scene, and thousands of possible points for their routes, which represents heavy computational overload.
 
-While the movement of each agent could be implemented in parallel, each agent is required to identify other agents which may represent an obstacle, towards adjusting its route.
-The results of \cite{bleiweiss08}, here reviewed, showed that it is possible to implement a common resolution of this problem in a GPU architecture using CUDA and achieving considerable speedups over a CPU implementation.
+While the movement of each agent could be implemented in parallel, each agent is required to identify other agents which may represent an obstacle, in order to properly adjust its route.
+The results of \cite{bleiweiss08}, here reviewed, showed that it is possible to implement a naive resolution of this problem in a GPU architecture using CUDA, achieving considerable speedups over a CPU implementation.

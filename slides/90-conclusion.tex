@@ -3,4 +3,23 @@
 
 \begin{frame}
 	\frametitle{Conclusion}
+	\begin{itemize}
+		\item GPU implementation of the A$\star$ surpassed the CPU implementation;
+		\vfill
+		\item Outdated:
+		\begin{itemize}
+			\item The innovation is a GPU implementation of A$\star$ (naive);
+			\item CUDA (1.1) was a rather ``new'' approach to parallelism;
+			\item GPU memory was limited to 512 MB;
+		\end{itemize}
+		\vfill
+		\item Methodology is not the most correct:
+		\begin{itemize}
+			\item Anja Johansson suggested less agents and more nodes;
+			\item Strange CPU choice;
+			\item Strange mix of versions;
+			\item No highly parallel shared memory implementation;
+			\item No distributed memory implementation;
+		\end{itemize}
+	\end{itemize}
 \end{frame}
