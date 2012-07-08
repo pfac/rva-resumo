@@ -1,3 +1,6 @@
+# Misc
+*.backup
+
 # System files
 .DS_Store
 
@@ -15,3 +18,7 @@
 *.nav
 *.snm
 *.toc
+
+# latexmk generated files
+*.fdb_latexmk
+*.fls
